@@ -112,7 +112,7 @@ namespace Lab4
 
         public int getTaille()
         {
-            return (espaceInterieur);
+            return (taille);
         }
 
         public string afficherDescription()

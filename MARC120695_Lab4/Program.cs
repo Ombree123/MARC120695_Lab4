@@ -8,6 +8,9 @@ namespace Lab4
 {
     class Program
     {
+        //Le programe ne marche pas à cause de GetTaille.  Suggestion : Modelisé, Méthodes dans Program.cs, ne pas vérifier taille dans 
+
+
 
         static void Main(string[] args)
         {
