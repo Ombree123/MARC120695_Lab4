@@ -19,7 +19,7 @@ namespace Lab4
             sbyte murete;//0-100
             bool contientUnVer;
             bool possedeSaFeuille;
-            //Couleur en méthode
+            int range;
             
 
             do
@@ -35,13 +35,22 @@ namespace Lab4
                 variete = sbyte.Parse(Convert.ToString(rnd.Next(0,4)));
                 
                 dateCueillette = new DateTime(1995, 1, 1);
-                int range = (DateTime.Today - dateCueillette).Days; 
+                range = (DateTime.Today - dateCueillette).Days; 
                 dateCueillette = dateCueillette.AddDays(rnd.Next(range));
 
                 murete = sbyte.Parse(Convert.ToString(rnd.Next(0,101)));
 
                 banane.banane(variete,dateCueillette);
+
+                banane.murir(murete);
                 #endregion
+
+                #region Pomme
+                Pomme pomme = new Pomme();
+
+                #endregion
+
+
 
 
 

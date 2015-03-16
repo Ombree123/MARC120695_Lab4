@@ -58,6 +58,7 @@ namespace Lab4
             if (nouvelleMurete>=0 && nouvelleMurete <= 100)
             {
                 murete = nouvelleMurete;
+                mettreAJourCouleur();
             }
             else
                 do
