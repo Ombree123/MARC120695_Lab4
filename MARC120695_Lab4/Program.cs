@@ -21,14 +21,20 @@ namespace Lab4
             bool possedeSaFeuille;
             int range;
             
-
+            //Generation Contenu
             do
             {
                 CaisseBananes caisseBanane = new CaisseBananes();
                 CaissePommes caissePomme = new CaissePommes();
                 CasseauFraises casseauFraise = new CasseauFraises();
+
+            //Bananes
             do
             {
+                taille = caisseBanane.getTaille();
+
+                if(taille> 0)
+                {
                 #region banane
                 Banane banane = new Banane();
 
@@ -46,17 +52,42 @@ namespace Lab4
 
 
                 #endregion
+                }
+                
 
+               taille = caisseBanane.getTaille(); //Faire generation au dessus de cette ligne
+            }while(taille > 0);
+
+            //Pommes
+            do
+            {
+                taille = caissePomme.getTaille();
+
+                if(taille>0)
+                {
                 #region Pomme
                 Pomme pomme = new Pomme();
 
                 #endregion
+                }
 
+                taille = caissePomme.getTaille();
+
+            }while(taille>0);
+
+            //Fraises
+            do
+            {
+                taille = casseauFraise.getTaille();
+                
+                if(taille>0)
+                {
                 #region fraise
                 #endregion
+                }
 
-               taille = caisseBanane.getTaille(); //Faire generation au dessus de cette ligne
-            }while(taille > 0);
+                taille = casseauFraise.getTaille();
+            }while(taille>0);
 
             }
         }
