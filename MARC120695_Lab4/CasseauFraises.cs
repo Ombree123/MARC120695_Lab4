@@ -54,6 +54,7 @@ namespace Lab4
             if (taille <= 100 && taille > 0)
             {
                 this.taille = taille;
+                espaceInterieur = this.taille;
             }
             else
                 do
@@ -62,6 +63,8 @@ namespace Lab4
                     verification = int.TryParse(Console.ReadLine(), out taille);
                     if (taille <= 0 && taille > 100 && verification)
                         verification = false;
+                    else
+                        espaceInterieur = this.taille;
                 }
                 while (!verification);
 
@@ -75,6 +78,7 @@ namespace Lab4
             if (taille <= 100 && taille > 0)
             {
                 this.taille = taille;
+                espaceInterieur = this.taille;
             }
             else
                 do
@@ -83,6 +87,8 @@ namespace Lab4
                     verification = int.TryParse(Console.ReadLine(), out taille);
                     if (taille <= 0 && taille > 100 && verification)
                         verification = false;
+                    else
+                        espaceInterieur = this.taille;
                 }
                 while (!verification);
 

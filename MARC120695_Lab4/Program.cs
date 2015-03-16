@@ -43,6 +43,8 @@ namespace Lab4
                 banane.banane(variete,dateCueillette);
 
                 banane.murir(murete);
+
+
                 #endregion
 
                 #region Pomme
@@ -50,9 +52,8 @@ namespace Lab4
 
                 #endregion
 
-
-
-
+                #region fraise
+                #endregion
 
                taille = caisseBanane.getTaille(); //Faire generation au dessus de cette ligne
             }while(taille > 0);
