@@ -8,8 +8,6 @@ namespace Lab4
 {
     class Program
     {
-        //Le programe ne marche pas à cause de GetTaille.  Suggestion : Modelisé, Méthodes dans Program.cs, ne pas vérifier taille dans 
-
         public Banane creerBanane()
         {
             Random rnd = new Random();
@@ -149,7 +147,7 @@ namespace Lab4
             return (caissePomme);
         }
 
-        public CasseauFraises CassF()
+        public CasseauFraises cassF()
         {
             bool verification = true;
 
@@ -168,10 +166,36 @@ namespace Lab4
             return (casseauFraise);
         }
 
-
         static void Main(string[] args)
         {
+            Random rnd = new Random();
+            Camion camion = new Camion();
+            CaisseBananes caisseBananes = new CaisseBananes();
+            CaissePommes caissePommes = new CaissePommes();
+            CasseauFraises casseauFraises = new CasseauFraises();
+
+           //Remplir Camion
+
+            switch(rnd.Next(1,4))
+            {
+                case 1: 
+                    {
+                        caisseBananes = caisseB();
+                        break;
+                    }
+                case 2:
+                    {
+                        break;
+                    }
+                case 3:
+                    {
+                        break;
+                    }
+
+            }
             
+            
+
         }
       }
    }

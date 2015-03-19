@@ -8,24 +8,29 @@ namespace Lab4
 {
     class Camion
     {
-        private double tailleCoffre=10000, tailleContenuActuel=10000; 
+        private double tailleCoffre=10000, tailleLibre=10000; 
         private CaisseBananes[] contenuBananes;
         private CaissePommes[] contenuPommes;
         private CasseauFraises[] contenuFraises;
 
-        public void charger(CaisseBananes caisse)
+        public bool charger(CaisseBananes caisse)
         {
-            if ((tailleContenuActuel - caisse.getTaille()) >= 0)
+            if ((tailleLibre - caisse.getTaille()) >= 0)
             {
                 contenuBananes[contenuBananes.Count()] = caisse;
-                tailleContenuActuel = tailleContenuActuel - caisse.getTaille();
+                tailleLibre = tailleLibre - caisse.getTaille();
+                return (true);
             }
             else
+            {
                 Console.WriteLine("ERREUR : Surcharge");
+                return (false);
+            }
+                
             
         }
 
-        public void charger(CaisseBananes[] caisses)
+        public bool charger(CaisseBananes[] caisses)
         {
             double tailleCharge=0;
 
@@ -34,24 +39,35 @@ namespace Lab4
                 tailleCharge = tailleCharge + caisses[i].getTaille();
             }
 
-            if ((tailleContenuActuel - tailleCharge) >= 0)
-                contenuBananes = caisses;
-            else
-                Console.WriteLine("Erreur, surcharge");
-        }
-
-        public void charger(CaissePommes caisse)
-        {
-            if ((tailleContenuActuel - caisse.getTaille()) >= 0)
+            if ((tailleLibre - tailleCharge) >= 0)
             {
-                contenuPommes[contenuPommes.Count()] = caisse;
-                tailleContenuActuel = tailleContenuActuel - caisse.getTaille();
+                contenuBananes = caisses;
+                return (true);
             }
             else
-                Console.WriteLine("ERREUR : Surcharge");
+            {
+                Console.WriteLine("Erreur, surcharge");
+                return (false);
+            }
+                
         }
 
-        public void charger(CaissePommes[] caisses)
+        public bool charger(CaissePommes caisse)
+        {
+            if ((tailleLibre - caisse.getTaille()) >= 0)
+            {
+                contenuPommes[contenuPommes.Count()] = caisse;
+                tailleLibre = tailleLibre - caisse.getTaille();
+                return (true);
+            }
+            else
+            {
+                Console.WriteLine("ERREUR : Surcharge");
+                return (false);
+            }    
+        }
+
+        public bool charger(CaissePommes[] caisses)
         {
             double tailleCharge = 0;
 
@@ -60,24 +76,37 @@ namespace Lab4
                 tailleCharge = tailleCharge + caisses[i].getTaille();
             }
 
-            if ((tailleContenuActuel - tailleCharge) >= 0)
+            if ((tailleLibre - tailleCharge) >= 0)
+            {
                 contenuPommes = caisses;
+                return (true);
+            }
+                
             else
+            {
                 Console.WriteLine("Erreur, surcharge");
+                return (false);
+            }
+                
         }
 
-        public void charger(CasseauFraises casseau)
+        public bool charger(CasseauFraises casseau)
         {
-            if ((tailleContenuActuel - casseau.getTaille()) >= 0)
+            if ((tailleLibre - casseau.getTaille()) >= 0)
             {
                 contenuFraises[contenuFraises.Count()] = casseau;
-                tailleContenuActuel = tailleContenuActuel - casseau.getTaille();
+                tailleLibre = tailleLibre - casseau.getTaille();
+                return (true);
             }
             else
+            {
                 Console.WriteLine("ERREUR : Surcharge");
+                return (false);
+            }
+                
         }
 
-        public void charger(CasseauFraises[] casseaux)
+        public bool charger(CasseauFraises[] casseaux)
         {
             double tailleCharge = 0;
 
@@ -86,10 +115,17 @@ namespace Lab4
                 tailleCharge = tailleCharge + casseaux[i].getTaille();
             }
 
-            if ((tailleContenuActuel - tailleCharge) >= 0)
+            if ((tailleLibre - tailleCharge) >= 0)
+            {
                 contenuFraises = casseaux;
+                return (true);
+            }
+                
             else
+            {
                 Console.WriteLine("Erreur, surcharge");
+                return (false);
+            }     
         }
 
         public void dechargerPommes()
@@ -101,7 +137,7 @@ namespace Lab4
                 tailleCharge = tailleCharge + contenuPommes[i].getTaille();
             }
 
-            tailleContenuActuel = tailleContenuActuel + tailleCharge;
+            tailleLibre = tailleLibre + tailleCharge;
 
             contenuPommes = null;
 
@@ -116,7 +152,7 @@ namespace Lab4
                 tailleCharge = tailleCharge + contenuBananes[i].getTaille();
             }
 
-            tailleContenuActuel = tailleContenuActuel + tailleCharge;
+            tailleLibre = tailleLibre + tailleCharge;
 
             contenuBananes = null;
         }
@@ -130,14 +166,14 @@ namespace Lab4
                 tailleCharge = tailleCharge + contenuFraises[i].getTaille();
             }
 
-            tailleContenuActuel = tailleContenuActuel + tailleCharge;
+            tailleLibre = tailleLibre + tailleCharge;
 
             contenuFraises = null;
         }
 
         public string afficherDescription()
         {
-            return ("Le camion a une taille de "+tailleCoffre+" et "+tailleContenuActuel+"d'espace libre.");
+            return ("Le camion a une taille de "+tailleCoffre+" et "+tailleLibre+"d'espace libre.");
         }
     }
 }
