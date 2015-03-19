@@ -15,23 +15,21 @@ namespace Lab4
 
         public bool ajouterBanane(Banane banane)
         {
-            if (espaceInterieur-- >= 0)
+            if (espaceInterieur-- > 0)
             {
-                espaceInterieur--;
-                lesBananes[lesBananes.Count()] = banane;
+                lesBananes[(lesBananes.Count((s => s != null)))] = banane;
                 dateEmpaquetage = DateTime.Today;
                 return (true);
             }
             else
             {
-                Console.WriteLine("ERREUR : surcharge");
                 return (false);
             }   
         }
 
         public void ajouterBanane(Banane[] banane)
         {
-            if (espaceInterieur >= banane.Count())
+            if (espaceInterieur >= banane.Count(s => s != null))
             {
                 Banane[] lesBananesTemp = new Banane[lesBananes.Length + banane.Length];
                 Array.Copy(lesBananes, lesBananesTemp, 0);
@@ -39,7 +37,7 @@ namespace Lab4
 
                 lesBananes = lesBananesTemp;
 
-                espaceInterieur = espaceInterieur - banane.Count();
+                espaceInterieur = espaceInterieur - banane.Count(s => s != null);
             }
             else
                 Console.WriteLine("ERREUR : Surcharge");
@@ -95,7 +93,7 @@ namespace Lab4
                         this.taille = espaceInterieur;
                 }
                 while (!verification);
-            if (taille >= banane.Count())
+            if (taille >= banane.Count(s => s != null))
                 lesBananes = banane;
             else
                 Console.WriteLine("ERREUR : Surcharge");
@@ -111,7 +109,7 @@ namespace Lab4
 
         public void viderDeSesBananes()
         {
-            lesBananes = new Banane[taille];
+            this.lesBananes = new Banane[taille]; 
             espaceInterieur = taille;
         }
 
@@ -122,7 +120,7 @@ namespace Lab4
 
         public string afficherDescription()
         {
-            espaceInterieur = taille - lesBananes.Count();
+            espaceInterieur = taille - lesBananes.Count(s => s != null);
             return ("La date d'empaquetage est le "+dateEmpaquetage+" il y a de la place total pour "+taille+" bananes et son espace interieur est de "+espaceInterieur+" bananes");
         }
 

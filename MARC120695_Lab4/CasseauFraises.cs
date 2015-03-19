@@ -17,8 +17,7 @@ namespace Lab4
         {
             if (espaceInterieur-- >= 0)
             {
-                espaceInterieur--;
-                lesFraises[lesFraises.Count()] = fraise;
+                lesFraises[(lesFraises.Count((s => s != null))) - 1] = fraise;
                 return (true);
             }
             else
@@ -31,7 +30,7 @@ namespace Lab4
 
         public void ajouterFraise(Fraise[] fraise)
         {
-            if (espaceInterieur >= fraise.Count())
+            if (espaceInterieur >= fraise.Count(s => s != null))
             {
                 Fraise[] lesFraisesTemp = new Fraise[lesFraises.Length + fraise.Length];
                 Array.Copy(lesFraises, lesFraisesTemp, 0);
@@ -39,7 +38,7 @@ namespace Lab4
 
                 lesFraises = lesFraisesTemp;
 
-                espaceInterieur = espaceInterieur - fraise.Count();
+                espaceInterieur = espaceInterieur - fraise.Count(s => s != null);
             }
             else
                 Console.WriteLine("ERREUR : Surcharge");
@@ -97,7 +96,7 @@ namespace Lab4
                 }
                 while (!verification);
 
-            if (taille >= fraise.Count())
+            if (taille >= fraise.Count(s => s != null))
                 lesFraises = fraise;
             else
                 Console.WriteLine("ERREUR : Surcharge");
@@ -124,7 +123,7 @@ namespace Lab4
 
         public string afficherDescription()
         {
-            espaceInterieur = taille - lesFraises.Count();
+            espaceInterieur = taille - lesFraises.Count(s => s != null);
             return ("La date d'empaquetage est le " + dateEmpaquetage + " il y a de la place total pour " + taille + " Fraises et son espace interieur est de " + espaceInterieur + " bananes");
         }
     }

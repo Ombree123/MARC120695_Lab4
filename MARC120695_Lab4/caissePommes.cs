@@ -17,8 +17,7 @@ namespace Lab4
         {
             if (espaceInterieur-- >= 0)
             {
-                espaceInterieur--;
-                lesPommes[lesPommes.Count()] = pomme;
+                lesPommes[(lesPommes.Count((s => s != null))) - 1] = pomme;
                 dateEmpaquetage = DateTime.Today;
                 return (true);
             }
@@ -32,7 +31,7 @@ namespace Lab4
 
         public void ajouterPomme(Pomme[] pomme)
         {
-            if (espaceInterieur >= pomme.Count())
+            if (espaceInterieur >= pomme.Count(s => s != null))
             {
                 Pomme[] lesPommesTemp = new Pomme[lesPommes.Length + pomme.Length];
                 Array.Copy(lesPommes, lesPommesTemp, 0);
@@ -40,7 +39,7 @@ namespace Lab4
 
                 lesPommes = lesPommesTemp;
 
-                espaceInterieur = espaceInterieur - pomme.Count();
+                espaceInterieur = espaceInterieur - pomme.Count(s => s != null);
             }
             else
                 Console.WriteLine("ERREUR : Surcharge");  
@@ -96,7 +95,7 @@ namespace Lab4
                 }
                 while (!verification);
 
-            if (taille >= pomme.Count())
+            if (taille >= pomme.Count(s => s != null))
                 lesPommes = pomme;
             else
                 Console.WriteLine("ERREUR : Surcharge");
@@ -123,7 +122,7 @@ namespace Lab4
 
         public string afficherDescription()
         {
-            espaceInterieur = taille - lesPommes.Count();
+            espaceInterieur = taille - lesPommes.Count(s => s != null);
             return ("La date d'empaquetage est le " + dateEmpaquetage + " il y a de la place total pour " + taille + " pommes et son espace interieur est de " + espaceInterieur + " pommes");
         }
     }

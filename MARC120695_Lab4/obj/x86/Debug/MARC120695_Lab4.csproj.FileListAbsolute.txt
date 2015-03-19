@@ -1,0 +1,5 @@
+C:\Users\Admin\Documents\School\Lab4\MARC120695_Lab4\MARC120695_Lab4\bin\Debug\MARC120695_Lab4.exe
+C:\Users\Admin\Documents\School\Lab4\MARC120695_Lab4\MARC120695_Lab4\bin\Debug\MARC120695_Lab4.pdb
+C:\Users\Admin\Documents\School\Lab4\MARC120695_Lab4\MARC120695_Lab4\obj\x86\Debug\MARC120695_Lab4.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\School\Lab4\MARC120695_Lab4\MARC120695_Lab4\obj\x86\Debug\MARC120695_Lab4.exe
+C:\Users\Admin\Documents\School\Lab4\MARC120695_Lab4\MARC120695_Lab4\obj\x86\Debug\MARC120695_Lab4.pdb

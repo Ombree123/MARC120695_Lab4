@@ -8,7 +8,7 @@ namespace Lab4
 {
     class Program
     {
-        public Banane creerBanane()
+        static Banane creerBanane()
         {
             Random rnd = new Random();
             sbyte variete;//variete 1-2-3
@@ -36,7 +36,7 @@ namespace Lab4
             return (banane);
         }
 
-        public Pomme creerPomme()
+        static Pomme creerPomme()
         {
             Random rnd = new Random();
             sbyte variete;//variete 1-2-3
@@ -73,7 +73,7 @@ namespace Lab4
             
         }
 
-        public Fraise creerFraise()
+        static Fraise creerFraise()
         {
             Random rnd = new Random();
             sbyte variete;
@@ -108,7 +108,7 @@ namespace Lab4
 
         }
 
-        public CaisseBananes caisseB()
+        static CaisseBananes caisseB()
         {
             bool verification=true;
 
@@ -127,7 +127,7 @@ namespace Lab4
             return (caisseBananes);
         }
 
-        public CaissePommes caisseP()
+        static CaissePommes caisseP()
         {
             bool verification = true;
 
@@ -147,7 +147,7 @@ namespace Lab4
             return (caissePomme);
         }
 
-        public CasseauFraises cassF()
+        static CasseauFraises cassF()
         {
             bool verification = true;
 
@@ -168,31 +168,35 @@ namespace Lab4
 
         static void Main(string[] args)
         {
+            bool verification = true;
             Random rnd = new Random();
             Camion camion = new Camion();
-            CaisseBananes caisseBananes = new CaisseBananes();
-            CaissePommes caissePommes = new CaissePommes();
-            CasseauFraises casseauFraises = new CasseauFraises();
 
            //Remplir Camion
 
-            switch(rnd.Next(1,4))
+            do
             {
-                case 1: 
-                    {
-                        caisseBananes = caisseB();
-                        break;
-                    }
-                case 2:
-                    {
-                        break;
-                    }
-                case 3:
-                    {
-                        break;
-                    }
+                switch (1)                   //a rechanger pour rnd.Next(1,4)
+                {
+                    case 1:
+                        {
+                            verification = camion.charger(caisseB());
+                            break;
+                        }
+                    case 2:
+                        {
+                            verification = camion.charger(caisseP());
+                            break;
+                        }
+                    case 3:
+                        {
+                            verification = camion.charger(caisseP());
+                            break;
+                        }
 
-            }
+                }
+            } while (verification);
+            
             
             
 

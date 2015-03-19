@@ -8,22 +8,21 @@ namespace Lab4
 {
     class Camion
     {
-        private double tailleCoffre=10000, tailleLibre=10000; 
-        private CaisseBananes[] contenuBananes;
-        private CaissePommes[] contenuPommes;
-        private CasseauFraises[] contenuFraises;
+        private double tailleCoffre=10000, tailleLibre=10000;
+        private CaisseBananes[] contenuBananes = new CaisseBananes[100];
+        private CaissePommes[] contenuPommes = new CaissePommes[100];
+        private CasseauFraises[] contenuFraises = new CasseauFraises[100];
 
         public bool charger(CaisseBananes caisse)
         {
             if ((tailleLibre - caisse.getTaille()) >= 0)
             {
-                contenuBananes[contenuBananes.Count()] = caisse;
+                contenuBananes[(contenuBananes.Count((s => s != null))) ] = caisse;
                 tailleLibre = tailleLibre - caisse.getTaille();
                 return (true);
             }
             else
             {
-                Console.WriteLine("ERREUR : Surcharge");
                 return (false);
             }
                 
@@ -34,7 +33,7 @@ namespace Lab4
         {
             double tailleCharge=0;
 
-            for (int i = 0; i < caisses.Count(); i++)
+            for (int i = 0; i < caisses.Count(s => s != null); i++)
             {
                 tailleCharge = tailleCharge + caisses[i].getTaille();
             }
@@ -46,7 +45,6 @@ namespace Lab4
             }
             else
             {
-                Console.WriteLine("Erreur, surcharge");
                 return (false);
             }
                 
@@ -56,13 +54,12 @@ namespace Lab4
         {
             if ((tailleLibre - caisse.getTaille()) >= 0)
             {
-                contenuPommes[contenuPommes.Count()] = caisse;
+                contenuPommes[contenuPommes.Count(s => s != null)-1] = caisse;
                 tailleLibre = tailleLibre - caisse.getTaille();
                 return (true);
             }
             else
             {
-                Console.WriteLine("ERREUR : Surcharge");
                 return (false);
             }    
         }
@@ -71,7 +68,7 @@ namespace Lab4
         {
             double tailleCharge = 0;
 
-            for (int i = 0; i < caisses.Count(); i++)
+            for (int i = 0; i < caisses.Count(s => s != null); i++)
             {
                 tailleCharge = tailleCharge + caisses[i].getTaille();
             }
@@ -84,7 +81,6 @@ namespace Lab4
                 
             else
             {
-                Console.WriteLine("Erreur, surcharge");
                 return (false);
             }
                 
@@ -94,13 +90,12 @@ namespace Lab4
         {
             if ((tailleLibre - casseau.getTaille()) >= 0)
             {
-                contenuFraises[contenuFraises.Count()] = casseau;
+                contenuFraises[contenuFraises.Count(s => s != null)-1] = casseau;
                 tailleLibre = tailleLibre - casseau.getTaille();
                 return (true);
             }
             else
             {
-                Console.WriteLine("ERREUR : Surcharge");
                 return (false);
             }
                 
@@ -110,7 +105,7 @@ namespace Lab4
         {
             double tailleCharge = 0;
 
-            for (int i = 0; i < casseaux.Count(); i++)
+            for (int i = 0; i < casseaux.Count(s => s != null); i++)
             {
                 tailleCharge = tailleCharge + casseaux[i].getTaille();
             }
@@ -123,7 +118,6 @@ namespace Lab4
                 
             else
             {
-                Console.WriteLine("Erreur, surcharge");
                 return (false);
             }     
         }
@@ -132,7 +126,7 @@ namespace Lab4
         {
             double tailleCharge = 0;
 
-            for (int i = 0; i < contenuPommes.Count(); i++)
+            for (int i = 0; i < contenuPommes.Count(s => s != null); i++)
             {
                 tailleCharge = tailleCharge + contenuPommes[i].getTaille();
             }
@@ -147,7 +141,7 @@ namespace Lab4
         {
             double tailleCharge = 0;
 
-            for (int i = 0; i < contenuBananes.Count(); i++)
+            for (int i = 0; i < contenuBananes.Count(s => s != null); i++)
             {
                 tailleCharge = tailleCharge + contenuBananes[i].getTaille();
             }
@@ -161,7 +155,7 @@ namespace Lab4
         {
             double tailleCharge = 0;
 
-            for (int i = 0; i < contenuFraises.Count(); i++)
+            for (int i = 0; i < contenuFraises.Count(s => s != null); i++)
             {
                 tailleCharge = tailleCharge + contenuFraises[i].getTaille();
             }
