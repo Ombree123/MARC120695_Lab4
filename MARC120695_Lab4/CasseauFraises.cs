@@ -15,14 +15,13 @@ namespace Lab4
 
         public bool ajouterFraise(Fraise fraise)
         {
-            if (espaceInterieur-- >= 0)
+            if (espaceInterieur-- > 0)
             {
-                lesFraises[(lesFraises.Count((s => s != null))) - 1] = fraise;
+                lesFraises[(lesFraises.Count((s => s != null)))] = fraise;
                 return (true);
             }
             else
             {
-                Console.WriteLine("ERREUR : surcharge");
                 return (false);
             }
                 

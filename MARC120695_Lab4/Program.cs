@@ -176,7 +176,7 @@ namespace Lab4
 
             do
             {
-                switch (1)                   //a rechanger pour rnd.Next(1,4)
+                switch (rnd.Next(1,4))                   //a rechanger pour rnd.Next(1,4)
                 {
                     case 1:
                         {

@@ -15,15 +15,14 @@ namespace Lab4
 
         public bool ajouterPomme(Pomme pomme)
         {
-            if (espaceInterieur-- >= 0)
+            if (espaceInterieur-- > 0)
             {
-                lesPommes[(lesPommes.Count((s => s != null))) - 1] = pomme;
+                lesPommes[(lesPommes.Count((s => s != null)))] = pomme;
                 dateEmpaquetage = DateTime.Today;
                 return (true);
             }
             else
             {
-                Console.WriteLine("ERREUR : surcharge");
                 return (false);
             }
                 

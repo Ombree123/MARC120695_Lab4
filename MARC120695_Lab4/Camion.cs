@@ -9,9 +9,9 @@ namespace Lab4
     class Camion
     {
         private double tailleCoffre=10000, tailleLibre=10000;
-        private CaisseBananes[] contenuBananes = new CaisseBananes[100];
-        private CaissePommes[] contenuPommes = new CaissePommes[100];
-        private CasseauFraises[] contenuFraises = new CasseauFraises[100];
+        private CaisseBananes[] contenuBananes = new CaisseBananes[10000];
+        private CaissePommes[] contenuPommes = new CaissePommes[10000];
+        private CasseauFraises[] contenuFraises = new CasseauFraises[10000];
 
         public bool charger(CaisseBananes caisse)
         {
@@ -54,7 +54,7 @@ namespace Lab4
         {
             if ((tailleLibre - caisse.getTaille()) >= 0)
             {
-                contenuPommes[contenuPommes.Count(s => s != null)-1] = caisse;
+                contenuPommes[contenuPommes.Count(s => s != null)] = caisse;
                 tailleLibre = tailleLibre - caisse.getTaille();
                 return (true);
             }
@@ -90,7 +90,7 @@ namespace Lab4
         {
             if ((tailleLibre - casseau.getTaille()) >= 0)
             {
-                contenuFraises[contenuFraises.Count(s => s != null)-1] = casseau;
+                contenuFraises[contenuFraises.Count(s => s != null)] = casseau;
                 tailleLibre = tailleLibre - casseau.getTaille();
                 return (true);
             }
