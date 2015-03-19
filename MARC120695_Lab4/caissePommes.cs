@@ -9,19 +9,25 @@ namespace Lab4
     class CaissePommes
     {
         private Pomme[] lesPommes = new Pomme[100];
-        private string dateEmpaquetage;
+        private DateTime dateEmpaquetage;
         private int taille=100;
         private int espaceInterieur = 100;
 
-        public void ajouterPomme(Pomme pomme)
+        public bool ajouterPomme(Pomme pomme)
         {
             if (espaceInterieur-- >= 0)
             {
                 espaceInterieur--;
                 lesPommes[lesPommes.Count()] = pomme;
+                dateEmpaquetage = DateTime.Today;
+                return (true);
             }
             else
+            {
                 Console.WriteLine("ERREUR : surcharge");
+                return (false);
+            }
+                
         }
 
         public void ajouterPomme(Pomme[] pomme)

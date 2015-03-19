@@ -13,15 +13,20 @@ namespace Lab4
         private int taille=100;
         private int espaceInterieur = 100;
 
-        public void ajouterFraise(Fraise fraise)
+        public bool ajouterFraise(Fraise fraise)
         {
             if (espaceInterieur-- >= 0)
             {
                 espaceInterieur--;
                 lesFraises[lesFraises.Count()] = fraise;
+                return (true);
             }
             else
+            {
                 Console.WriteLine("ERREUR : surcharge");
+                return (false);
+            }
+                
         }
 
         public void ajouterFraise(Fraise[] fraise)

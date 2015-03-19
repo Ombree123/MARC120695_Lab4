@@ -112,8 +112,60 @@ namespace Lab4
 
         public CaisseBananes caisseB()
         {
+            bool verification=true;
+
             Random rnd = new Random();
 
+            CaisseBananes caisseBananes = new CaisseBananes();
+
+            //Taille Aléatoire
+            caisseBananes.caisseBananes(rnd.Next(20, 101));
+
+            do
+            {
+              verification = caisseBananes.ajouterBanane(creerBanane());
+            } while (verification);
+
+            return (caisseBananes);
+        }
+
+        public CaissePommes caisseP()
+        {
+            bool verification = true;
+
+            Random rnd = new Random();
+
+            CaissePommes caissePomme = new CaissePommes();
+
+            //Taille Aléatoire
+            caissePomme.caissePommes(rnd.Next(20, 101));
+
+            do
+            {
+                verification = caissePomme.ajouterPomme(creerPomme());
+
+            } while (verification);
+
+            return (caissePomme);
+        }
+
+        public CasseauFraises CassF()
+        {
+            bool verification = true;
+
+            Random rnd = new Random();
+
+            CasseauFraises casseauFraise = new CasseauFraises();
+
+            //Taille Aléatoire
+            casseauFraise.casseauFraises(rnd.Next(20, 101));
+
+            do
+            {
+                verification = casseauFraise.ajouterFraise(creerFraise());
+            } while (verification);
+
+            return (casseauFraise);
         }
 
 

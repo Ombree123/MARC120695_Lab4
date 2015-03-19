@@ -8,7 +8,7 @@ namespace Lab4
 {
     class CaisseBananes
     {
-        private string dateEmpaquetage;
+        private DateTime dateEmpaquetage;
         private int taille=100;
         private int espaceInterieur= 100;
         private Banane[] lesBananes = new Banane[100];
@@ -19,6 +19,7 @@ namespace Lab4
             {
                 espaceInterieur--;
                 lesBananes[lesBananes.Count()] = banane;
+                dateEmpaquetage = DateTime.Today;
                 return (true);
             }
             else
