@@ -8,7 +8,7 @@ namespace Lab4
 {
     class Camion
     {
-        private double tailleCoffre=10000, tailleContenuActuel=10000;  //Je me suis tromper j'ai fait place libre mais je devrais arriver au même résultat
+        private double tailleCoffre=10000, tailleContenuActuel=10000; 
         private CaisseBananes[] contenuBananes;
         private CaissePommes[] contenuPommes;
         private CasseauFraises[] contenuFraises;

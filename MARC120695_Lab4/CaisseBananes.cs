@@ -13,15 +13,19 @@ namespace Lab4
         private int espaceInterieur= 100;
         private Banane[] lesBananes = new Banane[100];
 
-        public void ajouterBanane(Banane banane)
+        public bool ajouterBanane(Banane banane)
         {
             if (espaceInterieur-- >= 0)
             {
                 espaceInterieur--;
                 lesBananes[lesBananes.Count()] = banane;
+                return (true);
             }
             else
+            {
                 Console.WriteLine("ERREUR : surcharge");
+                return (false);
+            }   
         }
 
         public void ajouterBanane(Banane[] banane)
