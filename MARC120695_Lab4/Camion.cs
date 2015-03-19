@@ -133,7 +133,7 @@ namespace Lab4
 
             tailleLibre = tailleLibre + tailleCharge;
 
-            contenuPommes = null;
+            contenuPommes = new CaissePommes[10000];
 
         }
 
@@ -148,7 +148,7 @@ namespace Lab4
 
             tailleLibre = tailleLibre + tailleCharge;
 
-            contenuBananes = null;
+            contenuBananes = new CaisseBananes[10000];
         }
 
         public void dechargerFraises()
@@ -162,7 +162,7 @@ namespace Lab4
 
             tailleLibre = tailleLibre + tailleCharge;
 
-            contenuFraises = null;
+            contenuFraises = new CasseauFraises[10000];
         }
 
         public string afficherDescription()

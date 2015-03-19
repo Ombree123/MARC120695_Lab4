@@ -173,7 +173,7 @@ namespace Lab4
             Camion camion = new Camion();
 
            //Remplir Camion
-
+            Console.WriteLine("Création des objets et chargement normal du camion");
             do
             {
                 switch (rnd.Next(1,4))         
@@ -196,7 +196,16 @@ namespace Lab4
 
                 }
             } while (verification);
-            
+            Console.WriteLine("Chargement terminé");
+
+            //Decharger Camion
+            Console.WriteLine("Dechargement du camion");
+
+            camion.dechargerPommes();
+            camion.dechargerFraises();
+            camion.dechargerBananes();
+
+            Console.WriteLine("Dechargement terminé");
             
             
 
