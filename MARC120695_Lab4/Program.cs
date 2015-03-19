@@ -15,6 +15,7 @@ namespace Lab4
 {
     class Program
     {
+        //Generation de Bananes
         static Banane creerBanane()
         {
             Random rnd = new Random();
@@ -43,6 +44,7 @@ namespace Lab4
             return (banane);
         }
 
+        //Generation de Pommes
         static Pomme creerPomme()
         {
             Random rnd = new Random();
@@ -78,6 +80,7 @@ namespace Lab4
             return (pomme);   
         }
 
+        //Generation de Fraises
         static Fraise creerFraise()
         {
             Random rnd = new Random();
@@ -113,6 +116,7 @@ namespace Lab4
 
         }
 
+        //Generations de Caisses de Bananes
         static CaisseBananes caisseB()
         {
             bool verification=true;
@@ -139,6 +143,7 @@ namespace Lab4
             return (caisseBananes);
         }
 
+        //Generation de Caisses de Pommes
         static CaissePommes caisseP()
         {
             bool verification = true;
@@ -163,6 +168,7 @@ namespace Lab4
             return (caissePomme);
         }
 
+        //Generation de Casseaux de fraises
         static CasseauFraises cassF()
         {
             bool verification = true;

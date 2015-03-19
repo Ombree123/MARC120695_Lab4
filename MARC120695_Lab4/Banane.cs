@@ -8,7 +8,7 @@ namespace Lab4
 {
     class Banane
     {
-        private sbyte variete;              //variete 1-2-3
+        private sbyte variete;              
         private DateTime dateCueillette;
         private sbyte murete;
         private string couleur;
