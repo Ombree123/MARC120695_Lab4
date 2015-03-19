@@ -75,9 +75,7 @@ namespace Lab4
 
 
 
-            return (pomme);
-
-            
+            return (pomme);   
         }
 
         static Fraise creerFraise()
@@ -126,9 +124,16 @@ namespace Lab4
             //Taille Aléatoire
             caisseBananes.caisseBananes(rnd.Next(20, 101));
 
+            
+
             do
             {
               verification = caisseBananes.ajouterBanane(creerBanane());
+
+              //Accident aléatoire
+              if (rnd.Next(1, 5000) == 50)
+                  caisseBananes.viderDeSesBananes();
+
             } while (verification);
 
             return (caisseBananes);
@@ -149,6 +154,10 @@ namespace Lab4
             {
                 verification = caissePomme.ajouterPomme(creerPomme());
 
+                //Accident aléatoire
+                if (rnd.Next(1, 5000) == 50)
+                    caissePomme.viderDeSesPommes();
+
             } while (verification);
 
             return (caissePomme);
@@ -157,17 +166,22 @@ namespace Lab4
         static CasseauFraises cassF()
         {
             bool verification = true;
-
             Random rnd = new Random();
-
             CasseauFraises casseauFraise = new CasseauFraises();
 
             //Taille Aléatoire
             casseauFraise.casseauFraises(rnd.Next(20, 101));
 
+            
+
             do
             {
                 verification = casseauFraise.ajouterFraise(creerFraise());
+
+                //Accident aléatoire
+                if (rnd.Next(1, 5000) == 50)
+                    casseauFraise.viderDeSesFraises();
+
             } while (verification);
 
             return (casseauFraise);
