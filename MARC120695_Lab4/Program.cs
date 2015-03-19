@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*************************************************************************************************
+ * Programme  : Lab_4
+ * Fait par   : Charles Marchand
+ * Date       : 2015-03-19
+ * But        : Remplir et vider un camion.
+ *************************************************************************************************/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
