@@ -197,6 +197,7 @@ namespace Lab4
                 }
             } while (verification);
             Console.WriteLine("Chargement terminé");
+            Console.WriteLine(camion.afficherDescription());
 
             //Decharger Camion
             Console.WriteLine("Dechargement du camion");
@@ -204,11 +205,11 @@ namespace Lab4
             camion.dechargerPommes();
             camion.dechargerFraises();
             camion.dechargerBananes();
+            Console.WriteLine(camion.afficherDescription());
 
             Console.WriteLine("Dechargement terminé");
-            
-            
-
+            Console.WriteLine("Appuyer sur entrer pour terminer");
+            Console.ReadLine();
         }
       }
    }
